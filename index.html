@@ -1,20 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Telegram Test Send</title>
+<style>
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Share Tech Mono', monospace, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  button {
+    background: #111;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  button:hover {
+    background: #0f0;
+    color: #000;
+  }
+  #status {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #888;
+    max-width: 400px;
+    text-align: center;
+    word-break: break-word;
+  }
+</style>
+</head>
+<body>
 
 <button onclick="testSend()">Test Send</button>
+<div id="status"></div>
 
 <script>
 const BOT_TOKEN = "8773604137:AAEjU7B_uzTTX6DCWcyKQtroGbkdgA24nRc";
 const CHAT_ID = "7264141539";
 
-function testSend() {
-  const caption = "Test message from phishing page " + new Date().toISOString();
+async function testSend() {
+  const statusEl = document.getElementById("status");
+  statusEl.textContent = "Sending...";
+
+  const text = "Test message from User " + new Date().toISOString();
 
   const formData = new FormData();
   formData.append("chat_id", CHAT_ID);
-  formData.append("caption", caption);
+  formData.append("text", text);
 
-  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-    method: "POST",
-    body: formData
-  }).then(r => r.json()).then(console.log).catch(console.error);
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      body: formData
+    });
+    const data = await res.json();
+    console.log(data);
+
+    if (data.ok) {
+      statusEl.textContent = "✅ Sent successfully!";
+    } else {
+      statusEl.textContent = "❌ Error: " + data.description;
+    }
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent = "❌ Network error: " + err.message;
+  }
 }
 </script>
+
+</body>
+</html>
