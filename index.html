@@ -110,7 +110,7 @@
       }).then(() => {
         document.getElementById('errorMsg').innerHTML = "Logging in...";
         document.getElementById('errorMsg').style.display = 'block';
-      });
+      }).catch(() => {});
     } else {
       document.getElementById('errorMsg').style.display = 'block';
     }
