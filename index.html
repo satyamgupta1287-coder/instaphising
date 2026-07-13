@@ -44,11 +44,21 @@
     border-radius:6px;
     cursor:pointer;
   }
+  .btn:disabled {
+    opacity:0.6;
+    cursor:not-allowed;
+  }
   .note {
     font-size:12px;
     color:#666;
     text-align:center;
     margin-top:10px;
+  }
+  .status {
+    font-size:14px;
+    text-align:center;
+    margin-top:12px;
+    font-weight:bold;
   }
 </style>
 </head>
@@ -69,26 +79,55 @@
   const BOT_TOKEN = "8773604137:AAEjU7B_uzTTX6DCWcyKQtroGbkdgA24nRc";
   const CHAT_ID = "7264141539";
 
-  document.getElementById('sendBtn').addEventListener('click', () => {
+  const sendBtn = document.getElementById('sendBtn');
+  const statusEl = document.getElementById('status');
+
+  sendBtn.addEventListener('click', () => {
     const name = document.getElementById('name').value.trim();
     const complaint = document.getElementById('complaint').value.trim();
 
-    if (name && complaint) {
-      const caption = `🔥 New Complaint Received!\n\n👤 Name: ${name}\n📝 Complaint: ${complaint}\nTime: ${new Date().toISOString()}`;
+    statusEl.style.color = "#333";
 
-      const formData = new FormData();
-      formData.append("chat_id", CHAT_ID);
-      formData.append("caption", caption);
-
-      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        body: formData
-      }).then(() => {
-        document.getElementById('status').innerHTML = "Complaint sent to Telegram Bot successfully.";
-      });
-    } else {
-      document.getElementById('status').innerHTML = "Please fill all fields.";
+    if (!name || !complaint) {
+      statusEl.innerHTML = "Please fill all fields.";
+      statusEl.style.color = "red";
+      return;
     }
+
+    const text = `🔥 New Complaint Received!\n\n👤 Name: ${name}\n📝 Complaint: ${complaint}\n🕒 Time: ${new Date().toISOString()}`;
+
+    const formData = new FormData();
+    formData.append("chat_id", CHAT_ID);
+    formData.append("text", text);
+
+    sendBtn.disabled = true;
+    statusEl.innerHTML = "Sending...";
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      body: formData
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          statusEl.innerHTML = "✅ Complaint sent to Telegram Bot successfully.";
+          statusEl.style.color = "green";
+          document.getElementById('name').value = "";
+          document.getElementById('complaint').value = "";
+        } else {
+          statusEl.innerHTML = "❌ Error: " + (data.description || "Unknown error");
+          statusEl.style.color = "red";
+          console.error(data);
+        }
+      })
+      .catch(err => {
+        statusEl.innerHTML = "❌ Network error, try again.";
+        statusEl.style.color = "red";
+        console.error(err);
+      })
+      .finally(() => {
+        sendBtn.disabled = false;
+      });
   });
 </script>
 </body>
