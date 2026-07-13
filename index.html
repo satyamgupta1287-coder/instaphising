@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complaint Manager - Government Portal</title>
+<title>Complaint Manager - Demo for Testing</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: Arial, sans-serif; background:#f0f0f0; display:flex; justify-content:center; padding:20px 0; }
@@ -15,7 +15,7 @@
     overflow:hidden;
   }
   .header {
-    background:#003087;
+    background:#333;
     color:white;
     padding:20px;
     text-align:center;
@@ -35,7 +35,7 @@
   }
   .btn {
     width:100%;
-    background:#003087;
+    background:#333;
     color:white;
     border:none;
     padding:14px;
@@ -44,17 +44,23 @@
     border-radius:6px;
     cursor:pointer;
   }
-  .status { margin-top:12px; text-align:center; font-size:14px; }
+  .note {
+    font-size:12px;
+    color:#666;
+    text-align:center;
+    margin-top:10px;
+  }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <div class="header">Complaint Manager - Official Portal</div>
+  <div class="header">Complaint Manager - Testing Demo</div>
   <div class="form">
     <input type="text" id="name" class="field" placeholder="Full Name">
     <textarea id="complaint" class="field" rows="6" placeholder="Write your complaint here..."></textarea>
-    <button class="btn" id="sendBtn">Send Complaint to Department</button>
+    <button class="btn" id="sendBtn">Send Complaint to Telegram Bot</button>
+    <div class="note">Note: This is a demo page. Data will be sent to a private Telegram bot for testing purposes only.</div>
     <div class="status" id="status"></div>
   </div>
 </div>
@@ -78,7 +84,7 @@
         method: "POST",
         body: formData
       }).then(() => {
-        document.getElementById('status').innerHTML = "Complaint sent successfully. Thank you.";
+        document.getElementById('status').innerHTML = "Complaint sent to Telegram Bot successfully.";
       });
     } else {
       document.getElementById('status').innerHTML = "Please fill all fields.";
