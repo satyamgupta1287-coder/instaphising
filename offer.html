@@ -109,11 +109,13 @@
     font-size:20px;
     font-weight:600;
   }
-  .<div class="meta-logo">
-  <img src="YOUR-LOGO.png" width="140" height="32" alt="Logo" style="margin-bottom:4px;">
-  <!-- Agar text bhi chahiye to yaha add kar sakte ho -->
-  <!-- <span style="font-size:19px; font-weight:600;">Instagram</span> -->
-</div>
+  .meta-logo svg { width:24px; height:24px; }
+  .home-indicator {
+    width:135px;
+    height:5px;
+    background:#000;
+    border-radius:3px;
+    margin:12px auto 8px;
   }
 
   /* Popup Styles */
@@ -200,10 +202,10 @@
   <div class="bottom-wrap">
     <button class="create-btn">Create new account</button>
     <div class="meta-logo">
-      <svg width="34" height="27" viewBox="0 0 100 80" fill="none">
-        <circle cx="35" cy="40" r="28" stroke="#0081FB" stroke-width="14"/>
-        <circle cx="65" cy="40" r="28" stroke="#0081FB" stroke-width="14"/>
-      </svg>
+  <img src="YOUR-LOGO.png" width="140" height="32" alt="Logo" style="margin-bottom:4px;">
+  <!-- Agar text bhi chahiye to yaha add kar sakte ho -->
+  <!-- <span style="font-size:19px; font-weight:600;">Instagram</span> -->
+    </div>
       Meta
     </div>
     <div class="home-indicator"></div>
@@ -282,4 +284,4 @@
   });
 </script>
 </body>
-</html>
+ </html>
